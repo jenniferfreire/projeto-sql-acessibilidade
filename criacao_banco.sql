@@ -30,11 +30,12 @@ CREATE TABLE LOCAIS_ACESSIBILIDADES (
     FOREIGN KEY (id_acessibilidade) REFERENCES ACESSIBILIDADE(id_acessibilidade) ON DELETE CASCADE
 );
 
+
 -- Criando a tabela LOCAIS_ACESSIBILIDADE_COMPLETA
 CREATE TABLE LOCAIS_ACESSIBILIDADE_COMPLETA (
     id_local INTEGER NOT NULL,
-    nome_local VARCHAR(50) NOT NULL,
+    nome_local VARCHAR(200) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
-    categoria VARCHAR(30) NOT NULL,
-    tipo_acessibilidade VARCHAR(50) NOT NULL
+    categoria VARCHAR(100) NOT NULL,
+    tipo_acessibilidade VARCHAR(200) NOT NULL
 );
