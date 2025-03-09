@@ -1,5 +1,10 @@
 # 📌 Projeto: Local Acessibilidade  
 
+
+🔹 Desenvolvido por: Jennifer Freire  
+🔹 GitHub: https://github.com/jenniferfreire    
+🔹 LinkedIn: https://www.linkedin.com/in/freire-jennifer/    
+🔹 Descrição:   
 Este projeto foi desenvolvido para armazenar e consultar informações sobre locais e seus recursos de acessibilidade, facilitando a busca por ambientes mais inclusivos.
 
 ## 🏗 Estrutura do Projeto  
@@ -68,7 +73,7 @@ INSERT INTO ACESSIBILIDADE (descricao) VALUES
 ('Rampa de acesso'),
 ('Banheiro adaptado');
 
-INSERT INTO LOCAL_ACESSIBILIDADE (id_local, id_acessibilidade) VALUES
+INSERT INTO LOCAIS_ACESSIBILIDADES (id_local, id_acessibilidade) VALUES
 (1, 1),
 (2, 2),
 (3, 3);
@@ -97,6 +102,7 @@ SELECT COUNT(*) AS "Qtde. Locais Acessíveis"
 FROM locais_acessibilidade_completa
 WHERE tipo_acessibilidade ILIKE '%rampa%';
 ```
+
 
 ## 🚀 Como Rodar o Projeto  
 
