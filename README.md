@@ -5,6 +5,7 @@
 🔹 GitHub: https://github.com/jenniferfreire    
 🔹 LinkedIn: https://www.linkedin.com/in/freire-jennifer/    
 🔹 Descrição:   
+
 Este projeto foi desenvolvido para armazenar e consultar informações sobre locais e seus recursos de acessibilidade, facilitando a busca por ambientes mais inclusivos.
 
 ## 🏗 Estrutura do Projeto  
