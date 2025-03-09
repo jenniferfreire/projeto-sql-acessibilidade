@@ -20,7 +20,7 @@ O banco de dados contém as seguintes tabelas:
 
 O modelo do banco de dados foi representado através do seguinte diagrama:  
 
-![Diagrama ER](caminho_para_o_arquivo/diagrama.png)  
+[Diagrama ER](https://drive.google.com/file/d/194u1--YzXQ3O5UYxoGEZ4WTTJ7Po0ZuP/view?usp=drive_link)  
 
 ## 🗄 Scripts SQL  
 
