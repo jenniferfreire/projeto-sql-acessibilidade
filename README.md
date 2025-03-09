@@ -50,7 +50,7 @@ CREATE TABLE ACESSIBILIDADE (
     descricao VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE LOCAL_ACESSIBILIDADE (
+CREATE TABLE LOCAIS_ACESSIBILIDADES (
     id_local INT REFERENCES LOCAIS(id_local),
     id_acessibilidade INT REFERENCES ACESSIBILIDADE(id_acessibilidade),
     PRIMARY KEY (id_local, id_acessibilidade)
@@ -70,8 +70,8 @@ INSERT INTO ACESSIBILIDADE (descricao) VALUES
 
 INSERT INTO LOCAL_ACESSIBILIDADE (id_local, id_acessibilidade) VALUES
 (1, 1),
-(1, 2),
-(2, 1);
+(2, 2),
+(3, 3);
 ```
 
 ### 🔎 Consultas Úteis  

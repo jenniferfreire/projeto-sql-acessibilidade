@@ -23,6 +23,6 @@ WHERE tipo_acessibilidade ILIKE '%libras%'; -- Substituir pelo termo desejado
 
 
 -- Contar quantos locais têm determinado recurso de acessibilidade
-SELECT COUNT(DISTINCT id_local) AS "Qtde. Locais Acessib. Disponível"
+SELECT COUNT(DISTINCT id_local) AS "Qtde. Locais Acessívies"
 FROM LOCAIS_ACESSIBILIDADE_COMPLETA
 WHERE tipo_acessibilidade ILIKE '%libras%'; -- Substituir pelo termo desejado
