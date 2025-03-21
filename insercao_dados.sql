@@ -53,42 +53,131 @@ VALUES (
 	'Estação Central',
 	'Av. Ferroviária, 159',
 	'Transporte Público'
+)
+(	
+	'Parque da Cidade',
+	'Av. Verde, 100', 
+	'Parque'
+),
+(	'Museu Histórico', 
+	'Rua Antiga, 55', 
+	'Museu'
+),
+(	'Teatro Municipal', 	
+	'Praça das Artes, 22', 
+	'Teatro'
+),
+(	'Shopping Central', 	
+	'Av. Comercial, 300', 
+	'Shopping'
+),
+(	'Universidade X', 	
+	'Rua do Conhecimento, 200', 
+	'Universidade'
+),
+(	'Hospital São Lucas', 	
+	'Rua da Saúde, 10', 
+	'Hospital'
+),
+(	'Estação Central', 	
+	'Av. Ferrovia, 800', 
+	'Transporte'
+),
+(	'Biblioteca do Saber', 	
+	'Rua dos Livros, 77', 
+	'Biblioteca'
+),
+(	'Ginásio Poliesportivo', 	
+	'Av. Esportes, 99', 
+	'Ginásio'
+),
+(	'Restaurante Inclusivo', 	
+	'Rua da Gastronomia, 50', 
+	'Restaurante'
 );
 
 
 -- Inserindo dados para tabela ACESSIBILIDADE
-INSERT INTO ACESSIBILIDADE (
-	descricao
-)
-VALUES (
-	'Rampa de acesso, elevador, banheiros adaptados'
+INSERT INTO ACESSIBILIDADE (descricao, tipo_deficiencia) VALUES
+(
+	'Rampa de acesso, elevador, banheiros adaptados', 
+	'Física'
 ),
 (
-	'Piso tátil, elevador, vagas PCD no estacionamento'
+	'Piso tátil, elevador, vagas PCD no estacionamento', 
+	'Física, Visual'
 ),
 (
-	'Equipamentos adaptados, profissionais treinados, rampa de acesso'
+	'Equipamentos adaptados, profissionais treinados, rampa de acesso', 
+	'Física, Intelectual'
 ),
 (
-	'Cardápio em braile, atendimento em Libras, banheiros adaptados'
+	'Cardápio em braile, atendimento em Libras, banheiros adaptados', 
+	'Visual, Auditiva, Física'
 ),
 (
-	'Intérprete de Libras, assentos reservados, audiodescrição'
+	'Intérprete de Libras, assentos reservados, audiodescrição', 
+	'Auditiva, Visual'
 ),
 (
-	'Trilhas adaptadas, playground inclusivo, banheiros acessíveis'
+	'Trilhas adaptadas, playground inclusivo, banheiros acessíveis', 
+	'Física, Intelectual, Múltipla'
 ),
 (
-	'Atendimento prioritário, rampas de acesso, comunicação alternativa'
+	'Atendimento prioritário, rampas de acesso, comunicação alternativa', 
+	'Física, Intelectual, Psicossocial'
 ),
 (
-	'Carrinhos adaptados, sinalização tátil, atendimento prioritário'	
+	'Carrinhos adaptados, sinalização tátil, atendimento prioritário', 
+	'Física, Visual, Intelectual'
 ),
 (
-	'Salas adaptadas, professores capacitados, materiais acessíveis'
+	'Salas adaptadas, professores capacitados, materiais acessíveis', 
+	'Intelectual, Psicossocial'
 ),
 (
-	'Plataforma elevada, sinalização sonora, atendimento especializado'
+	'Plataforma elevada, sinalização sonora, atendimento especializado', 
+	'Física, Visual, Auditiva'
+),
+(
+	'Rampas de acesso para cadeirantes', 
+	'Física'
+),
+(
+	'Elevador adaptado para PCDs', 
+	'Física'
+),
+(
+	'Banheiros adaptados', 
+	'Física'
+),
+(
+	'Sinalização em braile', 
+	'Visual'
+),
+(
+	'Atendimento em Libras', 
+	'Auditiva'
+),
+(
+	'Pisos táteis para deficientes visuais', 
+	'Visual'
+),
+(
+	'Vagas reservadas para PCDs', 
+	'Física'
+),
+(
+	'Cardápios em braile', 
+	'Visual'
+),
+(
+	'Audiodescrição em eventos', 
+	'Visual'
+),
+(
+	'Assentos preferenciais', 
+	'Física, Psicossocial'
 );
 
 
@@ -104,7 +193,18 @@ VALUES
 	(7, 7),  -- Clinica Saude Total - Rampas de acesso
 	(8, 8),  -- Supermercado Econômico - Carrinhos adaptados
 	(9, 9),  -- Escola Inclusiva - Salas adaptadas, professores capacitados, materiais acessíveis
-	(10, 10);  -- Estação Central - Plataforma elevada
+	(10, 10)  -- Estação Central - Plataforma elevada
+	(11,11),  -- Rampas de acesso para cadeirantes
+	(12,12),  -- Elevador adaptado para PCDs
+	(13,13),  -- Banheiros adaptados
+	(14,14),  -- Sinalização em braile
+	(15,15),  -- Atendimento em Libras
+	(16,16),  -- Pisos táteis para deficientes visuais
+	(17,17),  -- Vagas reservadas para PCDs
+	(18,18),  -- Cardápios em braile
+	(19,19),  -- Audiodescrição em eventos
+	(20,20),  -- Assentos preferenciais
+
 
 -- Populando a tabela LOCAIS_ACESSIBILIDADE_COMPLETA
 INSERT INTO LOCAIS_ACESSIBILIDADE_COMPLETA
@@ -114,6 +214,7 @@ SELECT
     LOCAIS.endereco,
     LOCAIS.categoria,
     ACESSIBILIDADE.descricao AS tipo_acessibilidade
+	ACESSIBILIDADE.tipo_deficiencia 
 FROM LOCAIS
 JOIN LOCAIS_ACESSIBILIDADES ON LOCAIS.id_local = LOCAIS_ACESSIBILIDADES.id_local
 JOIN ACESSIBILIDADE ON LOCAIS_ACESSIBILIDADES.id_acessibilidade = ACESSIBILIDADE.id_acessibilidade;

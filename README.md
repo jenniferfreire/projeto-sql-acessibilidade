@@ -13,7 +13,7 @@ Este projeto foi desenvolvido para armazenar e consultar informações sobre loc
 O banco de dados contém as seguintes tabelas:  
 
 - **Locais**: Armazena informações sobre os locais cadastrados.  
-- **Acessibilidade**: Contém os tipos de acessibilidade disponíveis.  
+- **Acessibilidade**: Contém os tipos de acessibilidade disponíveis e tipos de deficiências essas acessibilidades atendem.  
 - **Locais_Acessibilidades**: Tabela de junção que relaciona os locais com os seus respectivos recursos de acessibilidade.  
 - **Locais_Acessibilidade_Completa**: Uma visão agregada dos dados, unindo as informações das tabelas anteriores.  
 
@@ -53,7 +53,8 @@ CREATE TABLE LOCAIS (
 
 CREATE TABLE ACESSIBILIDADE (
     id_acessibilidade SERIAL PRIMARY KEY,
-    descricao VARCHAR(100) NOT NULL
+    descricao VARCHAR(100) NOT NULL,
+    tipo_deficiencia  VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE LOCAIS_ACESSIBILIDADES (
@@ -70,9 +71,9 @@ INSERT INTO LOCAIS (nome, endereco, categoria) VALUES
 ('Biblioteca Central', 'Rua das Letras, 123', 'Biblioteca'),
 ('Shopping Acessível', 'Avenida Inclusiva, 45', 'Comércio');
 
-INSERT INTO ACESSIBILIDADE (descricao) VALUES
-('Rampa de acesso'),
-('Banheiro adaptado');
+INSERT INTO ACESSIBILIDADE (descricao, tipo_deficiencia) VALUES
+('Rampa de acesso, elevador, banheiros adaptados', 'Física'),
+('Piso tátil, elevador, vagas PCD no estacionamento', 'Física, Visual');
 
 INSERT INTO LOCAIS_ACESSIBILIDADES (id_local, id_acessibilidade) VALUES
 (1, 1),
